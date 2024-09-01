@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev # Default profile
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    hikari:
+      pool-name: HikariCP
