@@ -1,10 +1,21 @@
 spring:
-  profiles:
-    active: dev # Default profile
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  datasource:
-    hikari:
-      pool-name: HikariCP
+#  profiles:
+#    active: dev # Default profile
+   datasource:
+     #url: jdbc:h2:mem:testdb
+     url: jdbc:h2:file:/data/demo
+     driver-class-name: org.h2.Driver
+     username: sa
+     password: password
+   h2:
+    console:
+    enabled: true
+    path: /h2-console
+        #http://localhost:8080/h2-console to view data base in console
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+##  datasource:
+##    hikari:
+##      pool-name: HikariCP

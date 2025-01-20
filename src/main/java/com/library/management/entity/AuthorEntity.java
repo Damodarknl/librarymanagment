@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -17,6 +19,6 @@ public class AuthorEntity {
     private String name;
     private String biography;
 
-    @ManyToMany(mappedBy = "authors")
-    private List<Book> books;
+    @ManyToMany(fetch = FetchType.LAZY, cascade ={CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, mappedBy = "authors")
+    private Set<Book> books = new HashSet<>();
 }

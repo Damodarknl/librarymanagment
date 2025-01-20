@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Author {
-    private Long id;
+  //  private Long id;
     private String name;
     private String biography;
 }

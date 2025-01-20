@@ -13,8 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class BookRequest {
-  @NotNull(message = "ID cannot be null")
-  private Long id;
+    private Long id;
 
   @NotEmpty(message = "the title should not be empty")
   private String title;

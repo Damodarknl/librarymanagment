@@ -3,6 +3,8 @@ package com.library.management.entity;
 import jakarta.persistence.*;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,11 +19,11 @@ public class Book {
 
   private String title;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
   @JoinTable(name = "book_authors",
           joinColumns = @JoinColumn(name = "id"),
           inverseJoinColumns = @JoinColumn(name = "author_id"))
-  private List<AuthorEntity> authors;
+  private Set<AuthorEntity> authors;
 
   private String isbn;
   private String genre;
